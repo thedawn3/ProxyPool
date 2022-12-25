@@ -1,0 +1,14 @@
+RedisConfig:
+  Addr: '49.234.3.60:6379'
+  Password: 'wydj123++'
+  DB: 10
+  PoolSize: 20
+ProxyConfig:
+  #api地址
+  ApiUrl: 'http://zltiqu.pyhttp.taolop.com/getip?count=200&neek=18673&type=2&yys=0&port=1&sb=&mr=1&sep=0&ts=1&username=chukou01&spec=1'
+  #入库最低要求时间，单位 秒
+  MinSetProxyTime: 60
+  #触发提取阈值
+  MinProxyNum: 50
+  #代理验证超时 单位 s/秒
+  ProxyTimeout: 1s
