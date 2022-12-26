@@ -1,5 +1,6 @@
 package ProxyPool
 
+// test1
 import (
 	"fmt"
 	"github.com/go-redis/redis"
