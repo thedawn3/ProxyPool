@@ -121,7 +121,6 @@ func init() {
 		fmt.Println("Conf init err", err.Error())
 		return
 	}
-	fmt.Println(c)
 	proxyRedis()
 }
 
