@@ -98,7 +98,8 @@ func (this *ProxyInfo) ProxySetEx() {
 
 // ProxyPing 测试代理是否超时
 func (this *ProxyInfo) ProxyPing() bool {
-	Client := req.C().SetProxyURL(fmt.Sprint("http://", this.Proxy)).SetTimeout(time.Second)
+	ProxyURL := "http://" + this.Proxy
+	Client := req.C().SetProxyURL(ProxyURL).SetTimeout(c.ProxyConfig.ProxyTimeout)
 	resp, err := Client.R().Get("http://www.soso.com/")
 	if err != nil {
 		return false
@@ -122,6 +123,7 @@ func init() {
 		fmt.Println("Conf init err", err.Error())
 		return
 	}
+	fmt.Println(c)
 	proxyRedis()
 }
 
