@@ -129,12 +129,7 @@ func init() {
 
 // 初始化redis连接
 func proxyRedis() {
-	rdb = redis.NewClient(&redis.Options{
-		Addr:     "49.234.3.60:6379", // 指定
-		Password: "wydj123++",
-		DB:       10, // redis一共16个库，指定其中一个库即可
-		PoolSize: 20, // 连接池的大小为 20
-	})
+	rdb = redis.NewClient(&c.RedisConfig)
 	_, err := rdb.Ping().Result()
 	if err != nil {
 		log.Fatal(err)
