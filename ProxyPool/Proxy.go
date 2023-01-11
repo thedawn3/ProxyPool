@@ -27,6 +27,7 @@ type proxyConfig struct {
 	MinSetProxyTime int64
 	MinProxyNum     int64
 	ProxyTimeout    time.Duration
+	ProxyRepetition bool
 }
 
 type ProxyInfo struct {
@@ -187,9 +188,11 @@ func (this *ProxyInfo) proxySet(wg *sync.WaitGroup, okp *int32) {
 		return
 	}
 	KEY := fmt.Sprint("proxy:", strings.ReplaceAll(this.Proxy, ":", "@"))
-	ok := rdb.SetNX(KEY, "", time.Duration(TTL)*time.Second).Val()
-	if !ok {
-		return
+	if c.ProxyConfig.ProxyRepetition {
+		ok := rdb.SetNX(KEY, "", time.Duration(TTL)*time.Second).Val()
+		if !ok {
+			return
+		}
 	}
 	if this.ProxyPing() {
 		atomic.AddInt32(okp, 1)

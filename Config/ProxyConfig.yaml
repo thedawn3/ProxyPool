@@ -12,3 +12,5 @@ ProxyConfig:
   MinProxyNum: 50
   #代理验证超时 单位 s/秒
   ProxyTimeout: 1s
+  #是否校验重复代理
+  ProxyRepetition: true
