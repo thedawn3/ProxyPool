@@ -1,4 +1,4 @@
-module github.com/thedawn3/ProxyPool_t
+module github.com/thedawn3/ProxyUse
 
 go 1.19
 
