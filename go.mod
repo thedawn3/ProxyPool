@@ -1,7 +1,7 @@
 module github.com/thedawn3/ProxyUse
 
 go 1.19
-
+//
 require (
 	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/imroc/req/v3 v3.29.0
