@@ -221,7 +221,7 @@ func testGetProxy() (bool, string) {
 
 // 从代理API处获取n条代理
 func proxyApi() (string, bool) {
-	resp, err := req.C().SetTimeout(5 * time.Second).
+	resp, err := req.SetTimeout(5 * time.Second).
 		R().Get(c.ProxyConfig.ApiUrl)
 	if err != nil {
 		fmt.Println(err.Error())
