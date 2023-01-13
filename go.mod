@@ -1,4 +1,4 @@
-module github.com/thedawn3/ProxyUse
+module github.com/thedawn3/ProxyUse/v1
 
 go 1.19
 //
