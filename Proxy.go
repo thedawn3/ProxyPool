@@ -112,7 +112,7 @@ func (P *ProxyInfo) ProxyPing() bool {
 	return false
 }
 
-func init() {
+func Init() {
 	viper.SetConfigName("ProxyConfig")
 	viper.AddConfigPath("./Config/")
 	viper.SetConfigType("yaml")
